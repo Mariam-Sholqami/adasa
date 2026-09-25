@@ -1,0 +1,240 @@
+@import "tailwindcss";
+
+:root {
+  --color-primary: #f97316;
+  --color-primary-light: #fb923c;
+  --color-primary-dark: #ea580c;
+  --color-accent: #fbbf24;
+  --color-dark: #0a0a0a;
+  --color-dark-secondary: #111;
+  --color-dark-tertiary: #1a1a1a;
+  --color-dark-card: #161616;
+  --color-border: #262626;
+  --color-border-light: #333;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #f97316;
+}
+
+
+::selection {
+  background-color: #f97316;
+  color: #fff;
+}
+
+
+body {
+  background-color: #0a0a0a;
+  color: #fff;
+  font-family: Tajawal, system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 2rem;
+  padding-block: 1rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, #f97316, #ea580c);
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+}
+
+/* ===== section-label ===== */
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  padding-inline: 1rem;
+  padding-block: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.43;
+  font-weight: 500;
+  color: #f97316;
+  background: #f973161a;
+  border: 1px solid #f973164d;
+  border-radius: 9999px;
+}
+
+.section-label::before {
+  content: "";
+  width: 0.375rem;
+  height: 0.375rem;
+  background: #f97316;
+  border-radius: 9999px;
+  animation: pulse 2s infinite;
+}
+
+/* ===== gradient-text ===== */
+.gradient-text {
+  background: linear-gradient(135deg, #f97316, #fbbf24);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ===== input-dark ===== */
+.input-dark {
+  width: 100%;
+  padding-inline: 1.25rem;
+  padding-block: 1rem;
+  color: #fff;
+  background: #161616;
+  border: 1px solid #262626;
+  border-radius: 0.75rem;
+  outline: none;
+  transition: all 0.3s;
+}
+
+.input-dark::placeholder {
+  color: #737373;
+}
+
+.input-dark:focus {
+  border-color: #f97316;
+  box-shadow: 0 0 0 3px #f973161a;
+}
+
+/* ===== card ===== */
+.card {
+  background: #161616;
+  border: 1px solid #262626;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  transition: all 0.5s;
+}
+
+.card:hover {
+  border-color: #333;
+  transform: translateY(-4px);
+}
+
+/* ===== glass-card ===== */
+.glass-card {
+  border-radius: 1.5rem;
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  background: #161616cc;
+  border: 1px solid #262626;
+}
+
+/* ===== btn-secondary ===== */
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 2rem;
+  padding-block: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: transparent;
+  border: 1px solid #333;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+  color: #f97316;
+  background: #f973161a;
+  border-color: #f97316;
+}
+
+/* ===== section-title ===== */
+.section-title {
+  font-size: 2.25rem;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #fff;
+}
+
+@media (min-width: 48rem) {
+  .section-title {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  .section-title {
+    font-size: 3.75rem;
+  }
+}
+
+/* ===== section-subtitle ===== */
+.section-subtitle {
+  margin-top: 1rem;
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: #a3a3a3;
+}
+
+/* ===== pulse  ===== */
+@keyframes pulse {
+  0%,
+  to {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* ===== blob ===== */
+
+.blob {
+  animation: blob 8s ease-in-out infinite;
+}
+
+@keyframes blob {
+  0%,
+  to {
+    transform: translate(0, 0) scale(1);
+  }
+
+  33% {
+    transform: translate(20px, -30px) scale(1.1);
+  }
+
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+
+/* ===== animate-fade-in ===== */
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
